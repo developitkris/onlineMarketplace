@@ -30,4 +30,9 @@ export class AlbumService {
                                  description: localUpdatedAlbum.description});
     //called AngularFire's built-in feature .update
   }
+
+  deleteAlbum(localAlbumToDelete){
+    let albumEntryInFirebase= this.getAlbumById(localAlbumToDelete.$key);
+    albumEntryInFirebase.remove();
+  }
 }
